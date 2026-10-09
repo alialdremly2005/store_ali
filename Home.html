@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>متجر علي للإلكترونيات</title>
+  <style>
+    body {
+      margin: 0 auto;
+      max-width: 480px;
+      font-family: Tahoma, sans-serif;
+    }
+
+  .img {
+      background-color: #ddd;
+      overflow: hidden;
+    }
+
+     .img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+  header {
+      background-color: #4f8a10;
+      padding: 10px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+.logo img {
+      width: 30px;
+      height: 30px;
+      display: block;
+    }
+
+      header input {
+      width: 150px;
+      border: none;
+      border-radius: 15px;
+      padding: 5px 12px;
+      font-size: 10px;
+    }
+
+  .icons {
+      display: flex;
+      gap: 8px;
+    }
+
+  .icon-box {
+      width: 20px;
+      height: 20px;
+    }
+
+   .icon-box img {
+      width: 100%;
+      height: 100%;
+    }
+
+      nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 18px;
+      font-size: 12px;
+    }
+
+    nav a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .banners {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 20px;
+}
+
+.banner {
+  height: auto;
+}
+
+.big {
+  grid-row: span 2;
+}
+
+.banner .img {
+  aspect-ratio: 4 / 1;
+  border-radius: 7px;
+}
+
+.big .img {
+  aspect-ratio: auto;
+  height: 100%;
+  border-radius: 7px;
+}
+
+   .banner .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 7px;
+}
+
+
+    .products {
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    .white {
+      background-color: white;
+    }
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .title h2 {
+      font-size: 18px;
+      margin: 0 0 15px;
+    }
+
+    .title a {
+      font-size: 11px;
+      color: black;
+      text-decoration: none;
+    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.card {
+  min-width: 0;
+}
+
+.card .img {
+  aspect-ratio: 1 / 1;
+  position: relative;
+  background-color: white;
+}
+
+.card .img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+    .card {
+  min-width: 0;
+  background-color: white;
+  padding: 8px;
+  text-align: center;
+  position: relative;
+}
+
+    .tag {
+      position: absolute;
+      top: 80px;
+      right: 8px;
+      background-color: #4f8a10;
+      color: white;
+      font-size: 8px;
+      padding: 2px 5px;
+    }
+
+    .heart {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      font-size: 14px;
+      z-index: 2;
+    }
+
+    .badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background-color: purple;
+      color: white;
+      font-size: 8px;
+      padding: 1px 6px;
+      z-index: 2;
+    }
+
+    .name {
+      font-size: 10px;
+      margin: 10px 0 5px;
+      direction: ltr;
+    }
+
+    .price {
+      font-size: 10px;
+      font-weight: bold;
+      margin: 0 0 8px;
+      direction: ltr;
+    }
+
+    button {
+      background-color: #4f8a10;
+      color: white;
+      border: none;
+      padding: 6px;
+      width: 100%;
+      font-size: 10px;
+      cursor: pointer;
+    }
+
+    .categories {
+      display: flex;
+      gap: 10px;
+      padding: 20px;
+    }
+
+    .category {
+      flex: 1;
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+      font-size: 10px;
+    }
+
+    .category .img,
+.flash-right .img {
+  height: auto;
+  background-color: white;
+}
+
+.category .img img,
+.flash-right .img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+    .category p {
+      margin: 6px 0 2px;
+    }
+
+    .category a {
+      color: #4f8a10;
+      font-size: 8px;
+      text-decoration: none;
+    }
+
+    .flash {
+      display: flex;
+      gap: 10px;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+
+    .flash-right {
+      flex: 1;
+    }
+
+    .flash-right .img {
+      height: 70px;
+      margin-bottom: 10px;
+    }
+
+    .flash .card {
+      flex: 1;
+    }
+
+    .features {
+      display: flex;
+      gap: 10px;
+      padding: 30px 15px;
+      align-items: center;
+      font-size: 10px;
+    }
+
+    .features p {
+      flex: 1.2;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .feature {
+      flex: 1;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px 5px;
+      text-align: center;
+    }
+
+    .icon {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto 8px;
+}
+
+.icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+    .feature h4 {
+      font-size: 10px;
+      margin: 0 0 6px;
+    }
+
+    .feature a {
+      color: #4f8a10;
+      font-size: 9px;
+      text-decoration: none;
+    }
+
+    .reviews {
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    .reviews h2 {
+      font-size: 18px;
+      margin: 0 0 15px;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .review {
+      display: flex;
+      gap: 8px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 10px;
+    }
+
+    .review .img {
+  width: 70px;
+  height: 100px;
+  flex-shrink: 0;
+  background-color: white;
+}
+
+    .review p {
+      margin: 0 0 6px;
+    }
+
+    .reviewer {
+      font-weight: bold;
+    }
+
+    .stars {
+      color: orange;
+    }
+
+    .letter {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      line-height: 22px;
+      border-radius: 50%;
+      background-color: #4f8a10;
+      color: white;
+      text-align: center;
+    }
+
+    .date {
+      direction: ltr;
+      text-align: right;
+    }
+
+    footer {
+      display: flex;
+      gap: 15px;
+      padding: 25px 20px;
+      background-color: #f2f2f2;
+      font-size: 10px;
+    }
+
+    footer div {
+      flex: 1;
+    }
+
+    footer h4 {
+      margin: 0 0 8px;
+    }
+
+    footer input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 8px;
+      box-sizing: border-box;
+    }
+
+    footer a {
+      display: block;
+      color: black;
+      text-decoration: none;
+      margin-bottom: 8px;
+    }
+
+.but{
+  border-radius: 5px;
+}
+
+
+
+.card .img {
+  background-color: white;
+}
+  
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo"><img src="img/logo.svg"></div>
+    <input type="text" placeholder="ابحث في متجر علي">
+    <div class="icons">
+       <div class="icon-box"><img src="img/location.svg"></div>
+      <div class="icon-box"><img src="img/cart.svg"></div>
+      <div class="icon-box"><img src="img/user.svg"></div>
+     
+    </div>
+  </header>
+
+  <nav>
+    <a href="#">الأجهزة الخلوية</a>
+    <a href="#">أجهزة المنزل الذكي</a>
+    <a href="#">أجهزة لوحية وكمبيوتر</a>
+    <a href="#">سماعات</a>
+  </nav>
+
+<section class="banners">
+  <div class="banner big"><div class="img"><img src="img/لقطة شاشة 2026-10-06 132720.png"></div></div>
+  <div class="banner"><div class="img"><img src="img/لقطة شاشة 2026-10-06 132737.png"></div></div>
+  <div class="banner"><div class="img"><img src="img/لقطة شاشة 2026-10-06 132756.png"></div></div>
+</section>
+
+<section class="products">
+  <div class="title"><h2>مقترحة لك</h2></div>
+  <div class="grid">
+    <div class="card">
+      <span class="heart">♡</span>
+      <div class="img"><img src="img/ايفون 1.jpeg"></div>
+      <p class="name">samsung Galaxy S25 Ultra 256 GB</p>
+      <p class="price">$1,500.00</p>
+      <button class="but">أضف إلى السلة</button>
+    </div>
+
+    <div class="card">
+      <span class="heart">♡</span>
+      <div class="img"><img src="img/ايفون 2.jpeg"></div>
+      <p class="name">Eufy clean L60 Hybrid SES</p>
+      <p class="price">$1,500.00</p>
+      <button class="but">أضف إلى السلة</button>
+    </div>
+
+    <div class="card">
+      <span class="heart">♡</span>
+      <div class="img"><img src="img/ايفون3.jpeg"></div>
+      <p class="name">camon 30 premier 5g12-913</p>
+      <p class="price">$1,500.00</p>
+      <button class="but">أضف إلى السلة</button>
+    </div>
+
+    <div class="card">
+      <span class="heart">♡</span>
+      <div class="img"><img src="img/سامسونج 2.jpeg"></div>
+      <span class="tag">خصم حتى 30%</span>
+      <p class="name">samsung Galaxy S25 Ultra 256 GB</p>
+      <p class="price">$1,500.00</p>
+      <button class="but">أضف إلى السلة</button>
+    </div>
+
+    <div class="card">
+      <span class="heart">♡</span>
+      <div class="img"><img src="img/سامسونج 3.jpeg"></div>
+      <p class="name">samsung Galaxy S25 Ultra 256 GB</p>
+      <p class="price">$1,500.00</p>
+      <button class="but">أضف إلى السلة</button>
+    </div>
+
+    <div class="card">
+      <span class="heart">♡</span>
+      <div class="img"><img src="img/لقطة شاشة 2026-10-07 135354.png"></div>
+      <p class="name">samsung Galaxy S25 Ultra 256 GB</p>
+      <p class="price">$1,780.00</p>
+      <button class="but">أضف إلى السلة</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="categories">
+  <div class="category">
+    <div class="img"><img src="img/لقطة.png"></div>
+    <p>اكسسوارات اللعب</p>
+    <a href="#">تفاصيل أكثر</a>
+  </div>
+
+  <div class="category">
+    <div class="img"><img src="img/لقطة 3.png"></div>
+    <p>أجهزة التدليك والاسترخاء</p>
+    <a href="#">تفاصيل أكثر</a>
+  </div>
+
+  <div class="category">
+    <div class="img"><img src="img/لقطة 2.png"></div>
+    <p>اكسسوارات الكترونية</p>
+    <a href="#">تفاصيل أكثر</a>
+  </div>
+
+</section>
+<section class="flash">
+  <div class="flash-right">
+    <div class="img"><img src="img/جميع العروض.png"></div>
+    <button class="but">عرض جميع العروض</button>
+  </div>
+
+  <div class="card">
+    <span class="badge">خصم</span>
+    <div class="img"><img src="img/لقطة شاشة 2026-10-07 135354.png"></div>
+    <p class="name">samsung Galaxy S25 Ultra 256 GB</p>
+    <p class="price">$1,780.00</p>
+    <button class="but">أضف إلى السلة</button>
+  </div>
+
+  <div class="card">
+    <span class="badge">خصم</span>
+    <div class="img"><img src="img/سامسونج 2.jpeg"></div>
+    <p class="name">samsung Galaxy S25 Ultra 256 GB</p>
+    <p class="price">$1,780.00</p>
+    <button class="but">أضف إلى السلة</button>
+  </div>
+</section>
+<section class="features">
+  <p>منصة تسوق الكتروني رائدة توفر مجموعة متنوعة من المنتجات للتسوق بسهولة وأمان.</p>
+
+  <div class="feature">
+    <div class="icon"><img src="img/lock.svg"></div>
+    <h4>طرق دفع آمنة</h4>
+    <a href="#">تفاصيل أكثر</a>
+  </div>
+
+  <div class="feature">
+    <div class="icon"><img src="img/shield.svg"></div>
+    <h4>كفالة سنوية</h4>
+    <a href="#">تفاصيل أكثر</a>
+  </div>
+
+  <div class="feature">
+    <div class="icon"><img src="img/star.svg"></div>
+    <h4>منتجات أصلية</h4>
+    <a href="#">تفاصيل أكثر</a>
+  </div>
+</section>
+
+<section class="products white">
+  <div class="title"><h2>المنتجات الأفضل مبيعاً</h2><a href="#">عرض الجميع ‹</a></div>
+  <div class="grid">
+    <div class="card">
+      <span class="heart">♡</span>
+      <div class="img"><img src="img/لقطة شاشة 2026-10-07 135449.png"></div>
+      <p class="name">samsung Galaxy S25 Ultra 256 GB</p>
+      <p class="price">$1,780.00</p>
+      <button class="but">أضف إلى السلة</button>
+    </div>
+
+    <div class="card">
+      <span class="heart">♡</span>
+      <div class="img"><img src="img/ايفون3.jpeg"></div>
+      <p class="name">samsung Galaxy S25 Ultra 256 GB</p>
+      <p class="price">$1,580.00</p>
+      <button class="but">أضف إلى السلة</button>
+    </div>
+
+    <div class="card">
+      <span class="heart">♡</span>
+      <div class="img"><img src="img/لقطة شاشة 2026-10-07 135354.png"></div>
+      <p class="name">samsung Galaxy S25 Ultra 256 GB</p>
+      <p class="price">$1,780.00</p>
+      <button class="but">أضف إلى السلة</button>
+    </div>
+
+    <div class="card">
+      <span class="heart">♡</span>
+      <div class="img"><img src="img/ايفون 1.jpeg"></div>
+      <p class="name">samsung Galaxy S25 Ultra 256 GB</p>
+      <p class="price">$1,880.00</p>
+      <button class="but">أضف إلى السلة</button>
+    </div>
+
+    <div class="card">
+      <span class="heart">♡</span>
+      <div class="img"><img src="img/سامسونج 3.jpeg"></div>
+      <p class="name">samsung Galaxy S25 Ultra 256 GB</p>
+      <p class="price">$1,780.00</p>
+      <button class="but">أضف إلى السلة</button>
+    </div>
+
+    <div class="card">
+      <span class="heart">♡</span>
+      <div class="img"><img src="img/ايفون 2.jpeg"></div>
+      <p class="name">samsung Galaxy S25 Ultra 256 GB</p>
+      <p class="price">$1,780.00</p>
+      <button class="but">أضف إلى السلة</button>
+    </div>
+
+  </div>
+</section>
+  <section class="reviews">
+  <h2>ماذا يقول عملاؤنا <span class="red">♥</span></h2>
+  <div class="reviews-grid">
+
+    <div class="review">
+      <div class="img"><img src="img/لقطة شاشة 2026-10-07 135521.png"></div>
+      <div>
+        <p class="reviewer"><span class="letter">A</span> أحمد</p>
+        <p class="stars">★★★★★</p>
+        <p>رائع جدا</p>
+        <p class="date">2025, Feb Sat</p>
+      </div>
+    </div>
+
+    <div class="review">
+      <div class="img"><img src="img/لقطة شاشة 2026-10-07 135449.png"></div>
+      <div>
+        <p class="reviewer"><span class="letter">B</span> ياسم</p>
+        <p class="stars">★★★★★</p>
+        <p>روعة</p>
+        <p class="date">2025, Feb Sat</p>
+      </div>
+    </div>
+
+    <div class="review">
+      <div class="img"><img src="img/لقطة شاشة 2026-10-07 135430.png"></div>
+      <div>
+        <p class="reviewer"><span class="letter">N</span> ندى</p>
+        <p class="stars">★★★★★</p>
+        <p>عن تجربة الجهاز ممتاز</p>
+        <p class="date">2025, Feb Sat</p>
+      </div>
+    </div>
+
+    <div class="review">
+      <div class="img"><img src="img/لقطة شاشة 2026-10-07 135354.png"></div>
+      <div>
+        <p class="reviewer"><span class="letter">A</span> أيهم</p>
+        <p class="stars">★★★★★</p>
+        <p>good brand</p>
+        <p class="date">2025, Feb Sat</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+    <div>
+      <h4>متواجدين لمساعدتك</h4>
+      <button class="but">تواصل معنا</button>
+    </div>
+
+    <div>
+      <h4>خليك متابع لكل جديد</h4>
+      <input type="email" placeholder="أدخل بريدك الإلكتروني">
+      <button class="but">اشترك الآن</button>
+    </div>
+
+    <div>
+      <a href="#">من متجرنا</a>
+      <a href="#">تواصل معنا</a>
+      <a href="#">مقالات</a>
+      <a href="#">سياسة التبديل والارجاع</a>
+      <a href="#">الشروط والاحكام</a>
+      <a href="#">سياسة الاستخدام</a>
+    </div>
+  </footer>
+
+</body>
+</html>
